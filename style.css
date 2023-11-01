@@ -20,6 +20,10 @@ body {
   margin: 0;
 }
 
+body {
+  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
+}
+
 ul,
 li,
 a,
@@ -29,12 +33,23 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+main,
+section {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* a:visited {
+  color: #000;
+} */
 
 .visually-hidden {
   position: absolute;
@@ -85,6 +100,7 @@ h6 {
 .layout__main-wrapper {
   background: #f1f1f1;
 }
+
 .sneakers {
   margin: 0 auto;
   padding-top: 25px;
@@ -118,6 +134,10 @@ h6 {
   background-color: #fff;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.sneaker__link {
+  color: #000;
 }
 
 .sneaker__text-wrapper {
@@ -167,4 +187,73 @@ h6 {
   font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
   text-align: center;
   color: #a1a6b4;
+}
+
+/* СТИЛИ ДЛЯ КАРТОЧКИ КРОССОВКА */
+
+.layout__sneaker-card-wrapper {
+  padding: 32px;
+  background: #f1f1f1;
+}
+
+.sneaker-card {
+  margin: 0 auto;
+  padding: 48px;
+  max-width: 1140px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.sneaker-card__text-wrapper {
+  padding-top: 32px;
+}
+
+.sneaker-card__title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.sneaker-card__text {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.sneaker-card__description-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sneaker-card__description {
+  max-width: 506px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.about-list {
+  max-width: 506px;
+  width: 100%;
+}
+
+.about-list__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 1px #121723 solid;
+}
+
+.about-list__item:not(:first-child) {
+  margin-top: 24px;
+  padding-bottom: 24px;
+}
+
+.about-list__title {
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 400;
 }
