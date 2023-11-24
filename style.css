@@ -1,196 +1,251 @@
+/* подключение локальный шрифтов на страницу */
 @font-face {
   font-family: "Anonymous Pro";
-  src: url(fonts/AnonymousPro-Bold.ttf);
-  font-weight: 700;
+  src: url(fonts/AnonymousPro-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  display: swap;
 }
 
 @font-face {
   font-family: "Anonymous Pro";
-  src: url(fonts/AnonymousPro-Regular.ttf);
+  src: url(fonts/AnonymousPro-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+  display: swap;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
-}
-
-ul,
-li,
-a,
-p,
+/* сброс стилей по умолчанию */
+body,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
-main,
-section {
+p,
+ul,
+li {
   margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
 }
-
+ul {
+  list-style: none;
+  padding: 0;
+}
 img {
   max-width: 100%;
   height: auto;
 }
-
-/* a:visited {
+a {
+  text-decoration: none;
   color: #000;
-} */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
-.layout__header-wrapper {
-  width: 100%;
-  border-bottom: 1px solid #a1a6b4;
+/* задание шрифта всей странице */
+body {
+  font-family: "Anonymous Pro", sans-serif;
 }
 
-.header {
-  margin: 0 auto;
-  max-width: 1440px;
-  background-color: #fff;
-}
-
-.header__wrapper {
+/* стили для главного контейнера */
+main {
   display: flex;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 17px;
-  justify-content: space-between;
-  max-width: 1160px;
-}
-
-.socials {
-  display: flex;
-  gap: 24px;
+  flex-direction: column;
   align-items: center;
-}
-
-.socials__link {
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
-  color: #000;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.layout__main-wrapper {
   background: #f1f1f1;
 }
 
-.sneakers {
-  margin: 0 auto;
-  padding-top: 25px;
-  max-width: 1440px;
+/* стили для хедера(шапки) сайта */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #a1a6b4;
+  background: white;
 }
 
-.sneakers__wrapper {
-  margin: 0 auto;
-  max-width: 1161px;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin: 24px 0 24px;
 }
 
-.sneakers__collection {
-  padding-bottom: 24px;
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
-  color: #000;
-  font-size: 48px;
+.logo-link {
+  max-width: 215px;
+}
+
+/* стили для ссылок в хедере и футере */
+nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+}
+
+.nav-item {
+  display: inline;
+}
+
+.nav-link {
+  color: #121723;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 48px;
 }
 
-.sneakers__list {
+/* стили для  */
+.content {
+  margin: 32px 0;
+  max-width: 1140px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+/* стили для контейнера кроссовок */
+.sneakers {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  gap: 24px;
+  margin: 32px 0 0;
+}
+
+/* стили для карточки кроссовок */
+
+.sneaker-animation {
+  height: max-content;
+  transition: 200ms linear;
+}
+
+.sneaker-animation:hover {
+  transform: translateY(-10px);
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .sneaker {
-  margin-bottom: 24px;
-  max-width: 371px;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 364px;
+  height: 100%;
   border-radius: 12px;
-  cursor: pointer;
+  background: white;
 }
 
-.sneaker__link {
-  color: #000;
+.sneaker-image {
+  width: 100%;
+  border-radius: 12px;
 }
 
-.sneaker__text-wrapper {
+.sneaker-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
   padding: 32px 24px;
 }
 
-.sneaker__title {
-  margin-bottom: 10px;
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
+h3 {
   font-size: 26px;
-  font-weight: 700;
 }
 
-.sneaker__text {
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
+p {
   font-size: 20px;
-  font-weight: 400;
 }
 
-.layout__footer-wrapper {
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #121723;
 }
 
-.footer {
-  margin: 0 auto;
-  max-width: 1440px;
-}
-
-.footer__wrapper {
-  margin: 0 auto;
-  padding-top: 32px;
-  padding-bottom: 32px;
+/* стили для футера */
+.footer-content {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin: 32px 0;
+}
+
+.footer__logo-link {
+  max-width: 300px;
+  width: 100%;
+}
+
+footer .nav-link {
+  color: white;
+}
+
+.copyright {
+  display: flex;
   align-items: center;
-  max-width: 1160px;
-  border-bottom: 1px solid #e6e8ec66;
+  justify-content: center;
+  width: 100%;
+  max-width: 1140px;
+  border-top: 1px solid #a1a6b4;
 }
 
-.socials__link--light {
-  color: #fff;
-}
-
-.footer__text {
-  padding-top: 18px;
-  padding-bottom: 21px;
-  font-family: "Anonymous Pro", Arial, Helvetica, sans-serif;
-  text-align: center;
+.copyright-text {
   color: #a1a6b4;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0;
 }
 
-/* СТИЛИ ДЛЯ КАРТОЧКИ КРОССОВКА */
+.sneaker-animation {
+  animation-name: go;
+  animation-duration: 2s;
+}
 
+@media screen and (max-width: 425px) {
+  .header-container {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .content {
+    margin: 0 auto;
+    margin-top: 32px;
+    max-width: 343px;
+  }
+
+  .sneakers:last-child {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .footer-content {
+    margin-bottom: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .copyright {
+    margin: 0 auto;
+    max-width: 343px;
+  }
+}
+
+/* Стили для второй страници */
 .layout__sneaker-card-wrapper {
   padding: 32px;
   background: #f1f1f1;
@@ -256,4 +311,57 @@ img {
   padding-bottom: 20px;
   font-size: 30px;
   font-weight: 400;
+}
+
+@media screen and (max-width: 425px) {
+  .layout__sneaker-card-wrapper {
+    padding: 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .sneaker-card {
+    width: 343px;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .sneaker-card__img {
+    width: 295px;
+    height: 172px;
+  }
+
+  .sneaker-card__title {
+    font-size: 32px;
+  }
+
+  .sneaker-card__text {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .sneaker-card__description-wrapper {
+    flex-direction: column;
+  }
+
+  .sneaker-card__description {
+    font-size: 16px;
+  }
+
+  .about-list__title {
+    padding-top: 32px;
+    font-size: 24px;
+  }
+
+  .about-list__date {
+    font-size: 16px;
+  }
+
+  .about-list__price {
+    font-size: 16px;
+  }
+
+  .about-list__materials {
+    font-size: 16px;
+  }
 }
